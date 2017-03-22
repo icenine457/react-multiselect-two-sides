@@ -15,30 +15,22 @@ export default class List extends React.Component {
 	}
 	render() {
 		const {labelKey, options, valueKey} = this.props;
+		const items = options.map(item => {
+			return (
+				<ListItem
+					key={item[valueKey]}
+					onClick={this.handleClick}
+					disabled={item.disabled}
+					highlighted={item.highlighted}
+					label={item[labelKey]}
+					value={item[valueKey]}
+					/>
+			);
+		});
 
 		return (
 			<ul className="msts__list">
-				{options.map(item => (< ListItem
-					key={
-          item[valueKey]
-        }
-					onClick={
-          this.handleClick
-        }
-					disabled={
-          item.disabled
-        }
-					highlighted={
-          item.highlighted
-        }
-					label={
-          item[labelKey]
-        }
-					value={
-          item[valueKey]
-        }
-					/>))
-}
+				{items}
 			</ul>
 		);
 	}

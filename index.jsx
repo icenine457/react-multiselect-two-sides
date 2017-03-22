@@ -174,6 +174,29 @@ class MultiselectTwoSides extends React.Component {
 
 		const componentClassName = 'msts';
 
+		let sideControls = null;
+		if (showControls) {
+			sideControls = (
+				<div className="msts__side msts__side_controls">
+					<button
+						className="msts__control msts__control_select-all"
+						onClick={this.handleClickSelectAll}
+						title={selectAllText}
+						type="button"
+						disabled={value.length === options.length || value.length >= limit || disabled}
+						/>
+
+					<button
+						className="msts__control msts__control_deselect-all"
+						onClick={this.handleClickDeselectAll}
+						title={deselectAllText}
+						type="button"
+						disabled={!value.length || disabled}
+						/>
+				</div>
+				);
+		}
+
 		return (
 			<div className={classNames(componentClassName, disabled && `${componentClassName}_disabled`, className)}>
 				<ListSeparator
@@ -200,27 +223,7 @@ class MultiselectTwoSides extends React.Component {
 							/>
 					</div>
 
-					{showControls ?
-            (
-	<div className="msts__side msts__side_controls">
-		<button
-			className="msts__control msts__control_select-all"
-			onClick={this.handleClickSelectAll}
-			title={selectAllText}
-			type="button"
-			disabled={value.length === options.length || value.length >= limit || disabled}
-			/>
-
-		<button
-			className="msts__control msts__control_deselect-all"
-			onClick={this.handleClickDeselectAll}
-			title={deselectAllText}
-			type="button"
-			disabled={!value.length || disabled}
-			/>
-	</div>
-            ) :
-            null}
+					{sideControls}
 
 					<div className="msts__side msts__side_selected">
 						<List

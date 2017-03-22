@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack --watch",
-    "test": "eslint index.jsx test/*.js test/**/*.js webpack.config.js example/app.jsx && ava --verbose",
+    "test": "eslint index.jsx components/*.jsx test/*.js test/**/*.js webpack.config.js example/app.jsx && ava --verbose",
     "precommit": "npm test",
     "tdd": "ava --watch",
     "release-patch": "mversion patch",

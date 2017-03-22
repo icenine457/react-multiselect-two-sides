@@ -23,9 +23,8 @@ export default class ListItem extends React.Component {
 				className={classNames(className, disabled && `${className}_disabled`, highlighted && `${className}_highlighted`)}
 				onClick={this.handleClick}
 				>
-				{label
-}
-			</li >
+				{label}
+			</li>
 		);
 	}
 }
