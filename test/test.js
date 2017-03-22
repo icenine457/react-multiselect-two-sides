@@ -67,7 +67,7 @@ test('render filter', t => {
 	const props = {
 		searchable: true
 	};
-	const wrapper = shallow(<C {...props}/>);
+	const wrapper = mount(<C {...props}/>);
 	const items = wrapper.find('.msts__subheading');
 	t.is(items.type(), 'div');
 	t.true(items.hasClass('msts__subheading'));
@@ -75,7 +75,7 @@ test('render filter', t => {
 
 test('dont render filter by default', t => {
 	const props = {};
-	const wrapper = shallow(<C {...props}/>);
+	const wrapper = mount(<C {...props}/>);
 	const items = wrapper.find('.msts__subheading');
 	t.is(items.length, 0);
 });
