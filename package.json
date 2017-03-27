@@ -21,10 +21,10 @@
     "deploy": "gh-pages-deploy"
   },
   "files": [
-    "index.js",
+    "dist/index.js",
     "style.css"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "style": "style.css",
   "keywords": [
     "react",

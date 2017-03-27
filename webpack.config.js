@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
 	entry: {
 		example: './example/app.js',
-		main: './index.js'
+		index: './index.js'
 	},
 	output: {
 		filename: '[name].js',
