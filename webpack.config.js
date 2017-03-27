@@ -1,18 +1,22 @@
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 module.exports = {
-	entry: [
-		'./example/app.jsx'
-	],
+	entry: {
+		example: './example/app.js',
+		main: './index.js'
+	},
 	output: {
-		path: './example',
-		filename: 'bundle.js'
+		filename: '[name].js',
+		path: path.resolve(__dirname, 'dist'),
+		library: 'react-multiselect-two-sides',
+		libraryTarget: 'umd'
 	},
 	module: {
 		rules: [
 			{
-				test: /\.jsx$/,
+				test: /\.jsx?$/,
 				use: 'babel-loader',
 				exclude: /node_modules/
 			},
